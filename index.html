@@ -2,35 +2,106 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8" />
-    <title>TV Club – US Cantenay Épinard</title>
+    <title>USCE - Équipe Seniors 2</title>
 
     <meta http-equiv="refresh" content="300" />
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         html, body {
             margin: 0;
             padding: 0;
-            background: #000;
             height: 100%;
             width: 100%;
             overflow: hidden;
+            background: #000;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         }
 
-        .container {
-            width: 100vw;
+        .screen {
+            display: flex;
+            flex-direction: column;
             height: 100vh;
+            width: 100vw;
+            color: #ffffff;
         }
 
-        .container iframe {
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 10px 24px;
+            background: linear-gradient(90deg, #006b54 0%, #000000 70%);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+            gap: 20px;
+        }
+
+        .logo-wrapper {
+            flex-shrink: 0;
+        }
+
+        .logo-wrapper img {
+            height: 72px;
+            width: auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        .title-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .club-name {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            line-height: 1.1;
+        }
+
+        .team-name {
+            font-size: 1.4rem;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
+        .content {
+            flex: 1;
+            width: 100%;
+        }
+
+        .content iframe {
             border: none;
+            width: 100%;
+            height: 100%;
+        }
+
+        #widget-container {
             width: 100%;
             height: 100%;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <iframe src='https://www.sportcorico.com/widget/a069e95c-f0b5-4acb-a588-dc30e9edb4b2' width="100%" id="aecfbacbadceedbb"  style="border: none;" ></iframe> <script src='https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.5/iframeResizer.min.js'></script><script>iFrameResize({log: true}, '#aecfbacbadceedbb')</script>
+    <div class="screen">
+        <header class="header">
+            <div class="logo-wrapper">
+                <img src="logo-usce.png" alt="US Cantenay-Épinard" />
+            </div>
+
+            <div class="title-wrapper">
+                <div class="club-name">US CANTENAY-ÉPINARD</div>
+                <div class="team-name">Équipe Seniors 2</div>
+            </div>
+        </header>
+
+        <main class="content">
+            <iframe src='https://www.sportcorico.com/widget/a069e95c-f0b5-4acb-a588-dc30e9edb4b2' width="100%" id="aecfbacbadceedbb"  style="border: none;" ></iframe> <script src='https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.5/iframeResizer.min.js'></script><script>iFrameResize({log: true}, '#aecfbacbadceedbb')</script>
+        </main>
     </div>
 </body>
 </html>
