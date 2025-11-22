@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <title>USCE - Équipe Seniors 2</title>
-
     <meta http-equiv="refresh" content="300" />
-
     <style>
         * {
             box-sizing: border-box;
@@ -75,29 +73,38 @@
             width: 100%;
             display: grid;
             grid-template-columns: 1.5fr 1fr;
-            gap: 4px;
-            padding: 4px 6px 6px;
+            gap: 10px;
+            padding: 8px 12px 12px;
         }
 
         .panel {
-            background: transparent;
-            border-radius: 0;
-            padding: 0;
-            box-shadow: none;
+            background: rgba(0, 0, 0, 0.35);
+            border-radius: 14px;
+            padding: 4px;
             overflow: hidden;
+            height: 100%;
         }
 
-        .panel-left {
-        }
-
-        .panel-right {
-        }
-
-        .panel iframe {
+        .panel-left iframe {
             border: none;
             width: 135%;
             height: 145%;
             transform: scale(0.75);
+            transform-origin: top left;
+        }
+
+        .panel-right {
+            position: relative;
+        }
+
+        .panel-right iframe {
+            border: none;
+            position: absolute;
+            top: -120px;
+            left: 0;
+            width: 135%;
+            height: 200%;
+            transform: scale(0.8);
             transform-origin: top left;
         }
     </style>
@@ -108,36 +115,24 @@
             <div class="logo-wrapper">
                 <img src="logo-usce.png" alt="US Cantenay-Épinard" />
             </div>
-
             <div class="title-wrapper">
                 <div class="club-name">US Cantenay-Épinard</div>
                 <div class="team-name">Équipe Seniors 2</div>
             </div>
         </header>
-
         <main class="content">
             <section class="panel panel-left">
-                <iframe
-                    src="https://www.sportcorico.com/widget/a069e95c-f0b5-4acb-a588-dc30e9edb4b2"
-                    id="aecfbacbadceedbb">
-                </iframe>
+                <iframe src="https://www.sportcorico.com/widget/a069e95c-f0b5-4acb-a588-dc30e9edb4b2" id="aecfbacbadceedbb"></iframe>
             </section>
-
             <section class="panel panel-right">
-                <iframe
-                    src="https://www.sportcorico.com/widget/a06ad6e1-0d62-42ef-9429-17d3c3f7c0b6"
-                    id="aadedefdcfcb">
-                </iframe>
+                <iframe src="https://www.sportcorico.com/widget/a06ad6e1-0d62-42ef-9429-17d3c3f7c0b6" id="aadedefdcfcb"></iframe>
             </section>
         </main>
     </div>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.5/iframeResizer.min.js"></script>
     <script>
         iFrameResize(
-            {
-                log: false
-            },
+            { log: false },
             '#aecfbacbadceedbb, #aadedefdcfcb'
         );
     </script>
