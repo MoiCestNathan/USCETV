@@ -72,17 +72,32 @@
         .content {
             flex: 1;
             width: 100%;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 16px;
+            padding: 12px 16px 16px;
         }
 
-        .content iframe {
+        .panel {
+            background: #050505;
+            border-radius: 12px;
+            padding: 4px;
+            box-shadow: 0 0 18px rgba(0, 0, 0, 0.7);
+            overflow: hidden;
+        }
+
+        .panel-left {
+        }
+
+        .panel-right {
+        }
+
+        .panel iframe {
             border: none;
-            width: 100%;
-            height: 100%;
-        }
-
-        #widget-container {
-            width: 100%;
-            height: 100%;
+            width: 120%;
+            height: 120%;
+            transform: scale(0.8);
+            transform-origin: top left;
         }
     </style>
 </head>
@@ -90,6 +105,7 @@
     <div class="screen">
         <header class="header">
             <div class="logo-wrapper">
+                <!-- Ton logo : même dossier que l'HTML -->
                 <img src="logo-usce.png" alt="US Cantenay-Épinard" />
             </div>
 
@@ -100,8 +116,30 @@
         </header>
 
         <main class="content">
-            <iframe src='https://www.sportcorico.com/widget/a069e95c-f0b5-4acb-a588-dc30e9edb4b2' width="100%" id="aecfbacbadceedbb"  style="border: none;" ></iframe> <script src='https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.5/iframeResizer.min.js'></script><script>iFrameResize({log: true}, '#aecfbacbadceedbb')</script>
+            <section class="panel panel-left">
+                <iframe
+                    src='https://www.sportcorico.com/widget/a069e95c-f0b5-4acb-a588-dc30e9edb4b2'
+                    id="aecfbacbadceedbb">
+                </iframe>
+            </section>
+
+            <section class="panel panel-right">
+                <iframe
+                    src='https://www.sportcorico.com/widget/a06ad6e1-0d62-42ef-9429-17d3c3f7c0b6' 
+                    id="aadedefdcfcb">
+                </iframe>
+            </section>
         </main>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.5/iframeResizer.min.js"></script>
+    <script>
+        iFrameResize(
+            {
+                log: false
+            },
+            '#widget-classement, #widget-match-suivant-precedent'
+        );
+    </script>
 </body>
 </html>
